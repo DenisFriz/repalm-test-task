@@ -111,8 +111,10 @@ button {
 }
 .menu__list-item:hover > .menu__submenu, .menu__list-item:active > .menu__submenu {
   opacity: 1;
-  visibility: visible;
   transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s, 0s, 0s;
 }
 .menu__list-link {
   display: block;
@@ -134,9 +136,10 @@ button {
   margin: 0;
   min-width: 180px;
   opacity: 0;
-  visibility: hidden;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
   z-index: 10;
 }
 .menu__submenu .menu__list-item a {
@@ -158,11 +161,15 @@ button {
   .menu__submenu {
     position: static;
     transform: none;
-    opacity: 1;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
     visibility: visible;
-    display: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
   .menu__list-item:hover > .menu__submenu, .menu__list-item:active > .menu__submenu {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
   }
 }/*# sourceMappingURL=main.css.map */
