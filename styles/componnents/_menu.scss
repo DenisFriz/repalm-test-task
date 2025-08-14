@@ -93,6 +93,7 @@
 
     &__list-item:hover > .menu__submenu,
     &__list-item:active > .menu__submenu {
+      max-height: 500px;
       opacity: 1;
       pointer-events: auto;
     }

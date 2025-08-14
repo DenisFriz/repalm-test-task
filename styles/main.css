@@ -169,6 +169,7 @@ button {
     transition: max-height 0.3s ease, opacity 0.3s ease;
   }
   .menu__list-item:hover > .menu__submenu, .menu__list-item:active > .menu__submenu {
+    max-height: 500px;
     opacity: 1;
     pointer-events: auto;
   }
